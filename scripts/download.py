@@ -1,6 +1,6 @@
 import subprocess
 import time
-
+import os
 
 
 
@@ -17,6 +17,33 @@ def download():
             ],
             check=True
         )
+        subprocess.run(
+             [
+                  "git",
+                  "add",
+                  ".",
+
+
+             ]
+             
+             
+        )
+        subprocess.run(
+            [
+                "git",
+                "commit",
+                "-m",
+                "Обновили список в " + time.strftime("%Y-%m-%d %H:%M:%S"),
+            ],
+            check=True
+        )
+        subprocess.run(
+            [
+                "git",
+                "push",
+            ],
+            check=True
+        )
 
 
     except subprocess.CalledProcessError as error:
@@ -30,6 +57,8 @@ def download():
 #занесли в логи
 def make_log(error):
     if error is None:
+        
+
         with open("/Users/mgentel/Code/project_teh/logs/log.txt", "a") as f:
             f.write("Скачали с гита текущую версию " + time.strftime("%Y-%m-%d %H:%M:%S") + "\n")
     else:
