@@ -4,8 +4,8 @@ import time
 from datetime import datetime
 
 # Пути к файлам
-INPUT_FILE = "listnow.txt"      # Файл, который обновляется каждый час
-OUTPUT_FILE = "bestvpns.txt"    # Файл, куда будут записываться топ-10
+INPUT_FILE = "list/listnow.txt"      # Файл, который обновляется каждый час
+OUTPUT_FILE = "list/bestvpns.txt"    # Файл, куда будут записываться топ-10
 
 def get_ping(host):
     """Проверяет пинг до хоста. Возвращает время отклика в мс или 9999, если хост недоступен."""
