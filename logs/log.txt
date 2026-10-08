@@ -18,3 +18,11 @@
 Не удалось скачать в 2026-10-08 15:40:01 По причине Command '['curl', '-L', '-o', '/Users/mgentel/Code/project_teh/list/listnow.txt', 'https://raw.githubusercontent.com/FLAT447/v2ray-lists/refs/heads/main/BLACK_FULL.txt']' returned non-zero exit status 35.
 Скачали с гита текущую версию 2026-10-08 16:30:01
 Скачали с гита текущую версию 2026-10-08 17:30:02
+Не удалось скачать в 2026-10-08 18:30:20 По причине Command '['curl', '-L', '-o', '/Users/mgentel/Code/project_teh/list/listnow.txt', 'https://raw.githubusercontent.com/FLAT447/v2ray-lists/refs/heads/main/BLACK_FULL.txt']' returned non-zero exit status 35.
+Не удалось скачать в 2026-10-08 18:36:54 По причине Command '['curl', '-L', '-o', '/Users/mgentel/Code/project_teh/list/listnow.txt', 'https://raw.githubusercontent.com/FLAT447/v2ray-lists/refs/heads/main/BLACK_FULL.txt']' returned non-zero exit status 35.
+Скачали с гита текущую версию 2026-10-08 18:37:18
+Скачали с гита текущую версию 2026-10-08 18:38:52
+Не удалось скачать в 2026-10-08 18:40:15 По причине Command '['curl', '-L', '-o', '/Users/mgentel/Code/project_teh/list/listnow.txt', 'https://raw.githubusercontent.com/FLAT447/v2ray-lists/refs/heads/main/BLACK_FULL.txt']' returned non-zero exit status 6.
+Скачали с гита текущую версию 2026-10-08 18:40:22
+Скачали с гита текущую версию 2026-10-08 18:41:55
+Скачали с гита текущую версию 2026-10-08 18:46:47

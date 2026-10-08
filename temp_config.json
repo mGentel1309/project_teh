@@ -16,11 +16,11 @@
             "settings": {
                 "vnext": [
                     {
-                        "address": "104.16.72.21",
-                        "port": 8880,
+                        "address": "45.12.75.242",
+                        "port": 26424,
                         "users": [
                             {
-                                "id": "26fb53e4-fd49-4b34-b605-b6cc1b1a06a8",
+                                "id": "633f424e-2b11-48da-a6b3-a849dd71456f",
                                 "encryption": "none",
                                 "flow": ""
                             }
@@ -29,13 +29,14 @@
                 ]
             },
             "streamSettings": {
-                "network": "ws",
-                "security": "none",
-                "wsSettings": {
-                    "path": "/pyip",
-                    "headers": {
-                        "Host": "royal-shape-3771.93-728.workers.dev"
-                    }
+                "network": "raw",
+                "security": "reality",
+                "realitySettings": {
+                    "show": false,
+                    "serverName": "ya.ru",
+                    "publicKey": "l8AubqcxQO-HRFJy4pZL1vbLOo-eXit69s-XulSELE0",
+                    "shortId": "23103e1e",
+                    "fingerprint": "chrome"
                 }
             }
         }
