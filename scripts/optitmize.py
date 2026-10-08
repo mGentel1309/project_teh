@@ -248,7 +248,7 @@ def select_best_vpns(xray_path=None):
     print(f"[{datetime.now()}] Записано {len(top_10)} лучших vless-серверов в {OUTPUT_FILE}")
 
 
-if __name__ == "__main__":
+def main():
     if len(sys.argv) > 1:
         if sys.argv[1].startswith("vless://"):
             vless_url = sys.argv[1]
@@ -266,3 +266,8 @@ if __name__ == "__main__":
     else:
         print("Скрипт запускается и выбирает 10 самых быстрых vless-серверов через Xray из listnow.txt.")
         select_best_vpns()
+
+if __name__ == "__main__":
+    main()
+
+    
