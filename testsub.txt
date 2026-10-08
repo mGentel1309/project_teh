@@ -1,6 +1,4 @@
-#profile-title: My Brand VPN
-#profile-update-interval: 6
-#routing-enable: 1
+
 
 vless://9ef61079-6f7d-4911-9608-943da85d8e6f@test.keoplentuio.xyz:2053?type=raw#🇩🇪 Германия
 vless://9ef61079-6f7d-4911-9608-943da85d8e6f@test.keoplentuio.xyz:2053?type=tcp#🇩🇪 Германия
