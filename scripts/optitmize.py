@@ -198,9 +198,18 @@ def check_vless_ping(vless_url, xray_path="./xray", local_port=LOCAL_PORT):
             process.kill()
 
 
-def select_best_vpns():
+def select_best_vpns(xray_path=None):
     if not INPUT_FILE.exists():
         print(f"[{datetime.now()}] Файл {INPUT_FILE} не найден.")
+        return
+
+    xray_binary = Path(xray_path) if xray_path else XRAY_PATH
+    if not xray_binary.exists():
+        print(
+            f"[{datetime.now()}] Xray не найден: {xray_binary}. "
+            "Скачайте бинарник Xray в корень проекта или передайте путь: "
+            "python3 scripts/optitmize.py 'vless://...' /path/to/xray"
+        )
         return
 
     vpn_scores = []
@@ -212,19 +221,21 @@ def select_best_vpns():
             if not value.startswith("vless://"):
                 continue
 
-            host = extract_host(value)
-            if not host:
+            try:
+                ping_time = check_vless_ping(value, str(xray_binary))
+            except Exception as exc:
+                print(f"[{datetime.now()}] Ошибка проверки {value}: {exc}")
                 continue
 
-            ping_time = get_ping(host)
-            if ping_time < 9999:
+            if ping_time is not None:
                 vpn_scores.append((value, ping_time))
+                print(f"[{datetime.now()}] {value} - RTT: {ping_time} ms")
 
     if not vpn_scores:
-        print(f"[{datetime.now()}] В файле {INPUT_FILE} нет живых vless-серверов.")
+        print(f"[{datetime.now()}] В файле {INPUT_FILE} нет живых vless-серверов после проверки через Xray.")
         return
 
-    print(f"[{datetime.now()}] Проверяем {len(vpn_scores)} vless-серверов...")
+    print(f"[{datetime.now()}] Проверяем {len(vpn_scores)} vless-серверов через Xray...")
 
     vpn_scores.sort(key=lambda x: x[1])
     top_10 = vpn_scores[:10]
@@ -239,16 +250,19 @@ def select_best_vpns():
 
 if __name__ == "__main__":
     if len(sys.argv) > 1:
-        vless_url = sys.argv[1]
-        xray_binary = sys.argv[2] if len(sys.argv) > 2 else str(XRAY_PATH)
-        try:
-            ping_ms = check_vless_ping(vless_url, xray_binary)
-            if ping_ms is None:
-                print("❌ Проверка не удалась: сервер не отвечает или Xray не запустился.")
-            else:
-                print(f"✅ RTT: {ping_ms} ms")
-        except Exception as exc:
-            print(f"❌ Ошибка: {exc}")
+        if sys.argv[1].startswith("vless://"):
+            vless_url = sys.argv[1]
+            xray_binary = sys.argv[2] if len(sys.argv) > 2 else str(XRAY_PATH)
+            try:
+                ping_ms = check_vless_ping(vless_url, xray_binary)
+                if ping_ms is None:
+                    print("❌ Проверка не удалась: сервер не отвечает или Xray не запустился.")
+                else:
+                    print(f"✅ RTT: {ping_ms} ms")
+            except Exception as exc:
+                print(f"❌ Ошибка: {exc}")
+        else:
+            print("Использование: python3 scripts/optitmize.py 'vless://...' [path/to/xray]")
     else:
-        print("Скрипт запускается и выбирает 10 самых быстрых vless-серверов из listnow.txt.")
+        print("Скрипт запускается и выбирает 10 самых быстрых vless-серверов через Xray из listnow.txt.")
         select_best_vpns()

@@ -16,11 +16,11 @@
             "settings": {
                 "vnext": [
                     {
-                        "address": "188.114.97.6",
-                        "port": 8080,
+                        "address": "94.141.162.88",
+                        "port": 8447,
                         "users": [
                             {
-                                "id": "3a38b35b-7b31-452c-954f-99c2f45dda19",
+                                "id": "267b3a79-81f2-42ac-a409-c23b05b6329d",
                                 "encryption": "none",
                                 "flow": ""
                             }
@@ -29,13 +29,17 @@
                 ]
             },
             "streamSettings": {
-                "network": "ws",
-                "security": "none",
-                "wsSettings": {
-                    "path": "/pyip=ProxyIP.JP.CMLiussss.net",
-                    "headers": {
-                        "Host": "sweet-truth-0f0c.71-fca.workers.dev"
-                    }
+                "network": "grpc",
+                "security": "reality",
+                "realitySettings": {
+                    "show": false,
+                    "serverName": "srv88.bbobr.win",
+                    "publicKey": "spxYV3CT-gcnk7ABCozoIyrxKu8n-sl36RL6yDh-8xg",
+                    "shortId": "feb22e978bd90e60",
+                    "fingerprint": "firefox"
+                },
+                "grpcSettings": {
+                    "serviceName": "api.v2.9d87796f29"
                 }
             }
         }
