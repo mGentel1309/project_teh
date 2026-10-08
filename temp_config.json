@@ -1,0 +1,43 @@
+{
+    "inbounds": [
+        {
+            "port": 10808,
+            "listen": "127.0.0.1",
+            "protocol": "socks",
+            "settings": {
+                "auth": "noauth",
+                "udp": true
+            }
+        }
+    ],
+    "outbounds": [
+        {
+            "protocol": "vless",
+            "settings": {
+                "vnext": [
+                    {
+                        "address": "188.114.97.6",
+                        "port": 8080,
+                        "users": [
+                            {
+                                "id": "3a38b35b-7b31-452c-954f-99c2f45dda19",
+                                "encryption": "none",
+                                "flow": ""
+                            }
+                        ]
+                    }
+                ]
+            },
+            "streamSettings": {
+                "network": "ws",
+                "security": "none",
+                "wsSettings": {
+                    "path": "/pyip=ProxyIP.JP.CMLiussss.net",
+                    "headers": {
+                        "Host": "sweet-truth-0f0c.71-fca.workers.dev"
+                    }
+                }
+            }
+        }
+    ]
+}

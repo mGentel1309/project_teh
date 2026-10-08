@@ -155,6 +155,13 @@ def generate_xray_config(vless_url, config_path="temp_config.json"):
 
 def check_vless_ping(vless_url, xray_path="./xray", local_port=LOCAL_PORT):
     """Запускает Xray с данным VLESS, делает HTTP запрос и возвращает RTT в ms."""
+    xray_path = Path(xray_path)
+    if not xray_path.exists():
+        raise FileNotFoundError(
+            f"Xray не найден: {xray_path}. Скачайте бинарник Xray в корень проекта или передайте путь: "
+            "python3 scripts/optitmize.py 'vless://...' /path/to/xray"
+        )
+
     try:
         requests = importlib.import_module("requests")
     except ModuleNotFoundError as exc:
@@ -162,7 +169,7 @@ def check_vless_ping(vless_url, xray_path="./xray", local_port=LOCAL_PORT):
 
     config_path = generate_xray_config(vless_url, "temp_config.json")
     process = subprocess.Popen(
-        [xray_path, "run", "-c", config_path],
+        [str(xray_path), "run", "-c", config_path],
         stdout=subprocess.DEVNULL,
         stderr=subprocess.DEVNULL,
     )
@@ -233,8 +240,9 @@ def select_best_vpns():
 if __name__ == "__main__":
     if len(sys.argv) > 1:
         vless_url = sys.argv[1]
+        xray_binary = sys.argv[2] if len(sys.argv) > 2 else str(XRAY_PATH)
         try:
-            ping_ms = check_vless_ping(vless_url, str(XRAY_PATH))
+            ping_ms = check_vless_ping(vless_url, xray_binary)
             if ping_ms is None:
                 print("❌ Проверка не удалась: сервер не отвечает или Xray не запустился.")
             else:
