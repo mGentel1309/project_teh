@@ -2,3 +2,9 @@
 Скачали с гита текущую версию 2026-10-06 20:04:14
 Не удаллось скачать в 2026-10-06 20:06:54
 Не удалось скачать в 2026-10-06 20:27:37 По причине Command '['curl', '-L', '-o', '/Users/mgentel/Code/project_teh/list/listnow.txt', 'https://raw.githubusercontent.com/FLAT447/v2ray-lists/refs/heads/main/BLACK_FULL.txt']' returned non-zero exit status 6.
+Скачали с гита текущую версию 2026-10-07 20:27:20
+Не удалось скачать в 2026-10-07 21:07:02 По причине Command '['git', 'commit', '-m', 'Обновили список в 2026-10-07 21:07:02']' returned non-zero exit status 128.
+Не удалось скачать в 2026-10-07 22:07:01 По причине Command '['git', 'commit', '-m', 'Обновили список в 2026-10-07 22:07:01']' returned non-zero exit status 128.
+Не удалось скачать в 2026-10-07 23:07:01 По причине Command '['git', 'commit', '-m', 'Обновили список в 2026-10-07 23:07:01']' returned non-zero exit status 128.
+Не удалось скачать в 2026-10-08 00:07:01 По причине Command '['git', 'commit', '-m', 'Обновили список в 2026-10-08 00:07:01']' returned non-zero exit status 128.
+Не удалось скачать в 2026-10-08 13:07:01 По причине Command '['git', 'commit', '-m', 'Обновили список в 2026-10-08 13:07:01']' returned non-zero exit status 128.
