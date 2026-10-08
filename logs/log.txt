@@ -12,3 +12,7 @@
 Скачали с гита текущую версию 2026-10-08 13:25:26
 Скачали с гита текущую версию 2026-10-08 15:02:42
 Скачали с гита текущую версию 2026-10-08 15:04:55
+Скачали с гита текущую версию 2026-10-08 15:05:40
+Не удалось скачать в 2026-10-08 15:07:01 По причине Command '['git', 'commit', '-m', 'Обновили список в 2026-10-08 15:07:01']' returned non-zero exit status 128.
+Не удалось скачать в 2026-10-08 15:30:02 По причине Command '['curl', '-L', '-o', '/Users/mgentel/Code/project_teh/list/listnow.txt', 'https://raw.githubusercontent.com/FLAT447/v2ray-lists/refs/heads/main/BLACK_FULL.txt']' returned non-zero exit status 35.
+Не удалось скачать в 2026-10-08 15:40:01 По причине Command '['curl', '-L', '-o', '/Users/mgentel/Code/project_teh/list/listnow.txt', 'https://raw.githubusercontent.com/FLAT447/v2ray-lists/refs/heads/main/BLACK_FULL.txt']' returned non-zero exit status 35.

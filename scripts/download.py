@@ -16,33 +16,7 @@ def download():
             ],
             check=True
         )
-        subprocess.run(
-             [
-                  "git",
-                  "add",
-                  ".",
-
-
-             ]
-             
-             
-        )
-        subprocess.run(
-            [
-                "git",
-                "commit",
-                "-m",
-                "Обновили список в " + time.strftime("%Y-%m-%d %H:%M:%S"),
-            ],
-            check=True
-        )
-        subprocess.run(
-            [
-                "git",
-                "push",
-            ],
-            check=True
-        )
+        
 
 
     except subprocess.CalledProcessError as error:
