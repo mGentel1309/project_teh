@@ -3,7 +3,6 @@ import time
 import os
 
 
-
 #скачали с гита текущую версию
 def download():
     try:
